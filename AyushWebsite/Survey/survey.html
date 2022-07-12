@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <!-- <link rel="shortcut icon" href="images/favicon.png" type=""> -->
+  <link rel="shortcut icon" href="images/ayurveda_icon.jpg" type="">
+  <title> Ministry of Ayush </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+ 
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Ministry of Ayush
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          
+		  
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding" ng-app="surveyapp" ng-controller="surveycontroller">
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="images/hut.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="detail-box" ng-show="about_survey">
+            <div class="heading_container">
+              <h2>
+                About <span>Survey</span>
+              </h2>
+            </div>
+            <p style="text-align:justify;">
+             The mainstreaming of Ayush systems is one of the core strategies in the National Health Mission (NHM) which seeks to provide accessible, affordable, and quality health care to the population and particularly to the vulnerable sections by correcting the deficiencies in the existing health care delivery system and by integrating health care facilities with the ongoing vertical health care programmes. Under NHM, a large number of Ayush facilities have been set up in PHCs, CHCs and DHs and Ayush Physicians have been posted in these facilities. The objective of the survey is to understand the roles and responsibilities of Ayush doctors working under NHM facilities. 
+            </p>
+            <a href="#" ng-click="getstarted($event)">
+              Get Started
+            </a>
+          </div>
+		  <!--   ----------------------------------------  -->
+		  <div class="detail-box" ng-show="otp_validation">
+            <div class="heading_container">
+              <h2>
+                 <span style="font-size: 18px;">Enter Mobile No.</span>
+              </h2>
+            </div>
+			<form name="otp_form">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Mobile No....." ng-model="mobileno" name="mobileno" ng-pattern="ph_number" number required>
+				<!-- <input type="text" class="form-control" ng-model="mobileno" number> -->
+				<div class="input-group-append">
+						<!-- <span class="input-group-text" id="basic-addon2">@example.com</span> -->
+						<!-- <a href="#" class="input-group-text" ng-click="getstarted($event)">Submit</a> -->
+						<button class="btn btn-primary" type="button" ng-disabled="otp_form.$invalid" ng-click="sendmobileno()">Submit</button>
+				</div>
+			</div>
+			<span ng-show="otp_form.mobileno.$error.pattern" style="color: red">Please enter 10 digit Mobile No.</span>
+			</form>
+			<BR><BR><span style="color: green; font-size: 16px;">{{otp_message}}</span>
+			</div>
+			
+			<div ng-show="enter_otp">
+            <form name="send_otp_form">
+			
+			<div class="input-group">
+				<input type="text"  placeholder="OTP No." ng-model="otp" name="otp" ng-pattern="otp_pattern" number required >
+				<div class="input-group-append">
+						<button class="btn btn-primary" type="button" ng-disabled="enter_otp.$invalid" ng-click="sendotp()">Send OTP</button>
+				</div>
+				
+			</div>
+			<span ng-show="send_otp_form.otp.$error.pattern" style="color: red">Please enter 6 digit Mobile No.</span>
+			</form>
+          </div>
+		  <!--   ----------------------------------------  -->
+        </div>
+		<div class="col-md-1"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      
+	  
+      <div class="footer-info">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">Free Html Templates<br><br></a>
+            &copy; <span id="displayYear"></span> Distributed By
+            <a href="https://themewagon.com/">ThemeWagon</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="js/angular_1.8.2.js"></script>
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  
+  <!-- owl slider -->
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"> -->
+  <!-- </script> -->
+  <!-- custom js -->
+  <script type="text/javascript" src="js/custom.js"></script>
+  <!-- Google Map -->
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"> -->
+  <!-- </script> -->
+  <!-- End Google Map -->
+  
+  <script type="text/javascript" src="directive/number_directive.js"></script>
+  <script type="text/javascript" src="controller/surveyapp.js"></script>
+  <script type="text/javascript" src="controller/surveycontroller.js"></script>
+  
+  
+</body>
+
+</html>

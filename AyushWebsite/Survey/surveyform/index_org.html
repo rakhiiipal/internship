@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <!-- <link rel="shortcut icon" href="images/favicon.png" type=""> -->
+  <link rel="shortcut icon" href="../images/ayurveda_icon.jpg" type="">
+  <title> Ministry of Ayush </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="../css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="../css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../css/responsive.css" rel="stylesheet" />
+ 
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Ministry of Ayush
+            </span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="about.html"> About <span class="sr-only">(current)</span> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="departments.html">Departments</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="doctors.html">Doctors</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+              <form class="form-inline">
+                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                  <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding" ng-app="surveyformapp" ng-controller="surveyformcontroller">
+    <form name="surveyform">
+	<div class="container-fluid ">
+      <div class="row">
+        <div class="col-md-2 "></div>
+        <div class="col-md-8">
+			<table class="table bordered-table">
+			<tr style="background-color: #62D2A2;color:white;font-size: 24px;">
+				<td colspan="4">Survey Form</td>
+			</tr>
+			
+			<tr style="background-color: #62D2A2;color:white;font-size: 20px;">
+				<td colspan="4">1. Personal Profile</td>
+			</tr>
+			<tr>
+			   <td>
+			        <div class="form-group">
+						<label for="usr">Name:</label>
+						<input type="text" maxlength="100" class="form-control" id="usr" name="username" ng-model="surveyformdata.name" ng-pattern="name_pattern" required>
+						<span ng-show="surveyform.username.$error.pattern" style="color: red">Please enter valid Name.</span>
+					</div>
+			   </td>
+			   <td>
+			    <div class="form-group">
+						<label for="age">Age:</label>
+						<input type="text" class="form-control" id="age" name="age" ng-model="surveyformdata.age" maxlength="2" number required>
+				</div>
+			   </td>
+			   <td>
+			   <div class="form-group">
+						<label for="gen">Gender:</label>
+						<select class="form-control" id="gen" ng-model="surveyformdata.gender">
+						<option value="Male">Male</option>
+						<option value="Female">Female</option>
+						<option value="transgender">Transgender</option>
+						</select>
+				</div>
+			   </td>
+			   <td>
+			   <div class="form-group">
+						<label for="mob">Mobile No:</label>
+						<input type="text" class="form-control" id="mob" name="mob" ng-model="surveyformdata.mobileNo" readonly>
+				</div>
+			   </td>
+			</tr>
+			
+			<tr style="background-color: #62D2A2;color:white;font-size: 20px;">
+				<td colspan="4">2. Professional Profile</td>
+			</tr>
+			<tr>
+			<td>
+			<div class="form-group">
+						<label for="pq">Professional Qualification:</label>
+						<input type="text" class="form-control" id="pq" name="professional_qualification" ng-model="surveyformdata.professional_qualification">
+			</div>
+			</td>
+			<td>
+			<div class="form-group">
+						<label for="ddc">Degree/Diploma:</label>
+						<select class="form-control" id="ddc" ng-model="surveyformdata.ddc">
+						<option value="Degree">Degree</option>
+						<option value="Diploma">Diploma</option>
+						<option value="Certificate">Certificate</option>
+						</select>
+			</div>
+			</td>
+			<td>
+			<div class="form-group">
+						<label for="yop">Year of Passing:</label>
+						<input type="text" class="form-control" id="yop" name="yop" ng-model="surveyformdata.yop" number maxlength="4" >
+			</div>
+			</td>
+			</tr>
+			
+			
+			<tr>
+			<td>
+			<div class="form-group">
+						<label for="reg">Registration No:</label>
+						<input type="text" class="form-control" id="reg" name="reg" ng-model="surveyformdata.registrationNo">
+			</div>
+			</td>
+			<td>
+			<div class="form-group">
+						<label for="designation">Designation:</label>
+						<select class="form-control" id="designation" ng-model="surveyformdata.designation">
+						<option value="Director">Director</option>
+						<option value="CMO">CMO</option>
+						<option value="Other">Other</option>
+						</select>
+			</div>
+			</td>
+			<td>
+			<div class="form-group">
+						<label for="yoe">Year of Experience:</label>
+						<input type="text" class="form-control" id="yoe" name="yoe" ng-model="surveyformdata.yoe" maxlength="2" number>
+			</div>
+			</td>
+			</tr>
+			<tr style="background-color: #62D2A2;color:white;font-size: 20px;">
+				<td colspan="4">3. Working Environment</td>
+			</tr>
+			<tr>
+			<td>
+			<div class="form-group">
+						<label for="hphc">Hospital/PHC Name</label>
+						<input type="text" class="form-control" id="hphc" name="hphc" ng-model="surveyformdata.hphc">
+			</div>
+			</td>
+			<td>
+			<div class="form-group">
+						<label for="pincode">Pincode</label>
+						<input type="text" class="form-control" id="pincode" name="pincode" ng-model="surveyformdata.pincode" maxlength="6" number>
+			</div>
+			
+			</td>
+			<td>
+			<label>OPD Facility</label><br>
+			<div class="form-check-inline">
+				<label class="form-check-label">
+					<input type="radio" class="form-check-input" name="opdradio" ng-model="surveyformdata.opdradio" value="Yes">Yes
+				</label>
+			</div>
+			<div class="form-check-inline">
+				<label class="form-check-label">
+					<input type="radio" class="form-check-input" name="opdradio" ng-model="surveyformdata.opdradio" value="No">No
+				</label>
+			</div>
+			
+			</td>
+			<td>
+			<label>IPD Facility</label><br>
+			<div class="form-check-inline">
+				<label class="form-check-label">
+					<input type="radio" class="form-check-input" name="ipdradio" ng-model="surveyformdata.ipdradio" value="Yes">Yes
+				</label>
+			</div>
+			<div class="form-check-inline">
+				<label class="form-check-label">
+					<input type="radio" class="form-check-input" name="ipdradio" ng-model="surveyformdata.ipdradio" value="No">No
+				</label>
+			</div>
+			
+			</td>
+			
+			</tr>
+			<tr>
+			<td>
+			<label>Mix-Mode treatment</label><br>
+			<div class="form-check-inline">
+				<label class="form-check-label">
+					<input type="radio" class="form-check-input" name="mmtradio" ng-model="surveyformdata.mmtradio" value="Yes">Yes
+				</label>
+			</div>
+			<div class="form-check-inline">
+				<label class="form-check-label">
+					<input type="radio" class="form-check-input" name="mmtradio" ng-model="surveyformdata.mmtradio" value="No">No
+				</label>
+			</div>
+			 
+			</td>
+			<td>
+			<div class="form-group">
+						<label for="noofas">No of Ayurveda Staff.</label>
+						<input type="text" class="form-control" id="noofas" name="noofas" maxlength="2" number ng-model="surveyformdata.noofas">
+			</div>
+			
+			</td>
+			<td>
+			<div class="form-group">
+						<label for="pinopd">Participation in OPD(%).</label>
+						<input type="text" class="form-control" id="pinopd" name="participationinopd" number ng-model="surveyformdata.participationinopd">
+			</div>
+			
+			</td>
+			<td>
+			<div class="form-group">
+						<label for="pinipd">Participation in IPD(%).</label>
+						<input type="text" class="form-control" id="pinipd" name="pinipd" number ng-model="surveyformdata.participationinipd">
+			</div>
+			
+			</td>
+			
+			</tr>
+			<tr style="background-color: #62D2A2;color:white;font-size: 20px;">
+				<td colspan="4">4. Salary/Remunaration structure</td>
+			</tr>
+			<tr>
+			<td>
+			<div class="form-group">
+					<label for="salaryType">Salary Type:</label>
+					<select class="form-control" id="salary_type" ng-model="surveyformdata.salaryType">
+					<option value="central_government">Central Govt.</option>
+					<option value="state_government">State Govt</option>
+					<option value="lum_sum">Lum Sum</option>
+					<option value="daily_wage">Daily Wage</option>
+					</select>
+			</div>
+			
+			</td>
+			<td>
+			<div class="form-group">
+						<label for="increment">Increment(%).</label>
+						<input type="text" class="form-control" id="increment" name="increment" ng-model="surveyformdata.increment" number maxlength="2">
+			</div>
+			
+			</td>
+			<td>
+			<div class="form-group">
+						<label for="grossSalary">Monthly Gross Salary.</label>
+						<input type="text" class="form-control" id="grossSalary" name="grossSalary" ng-model="surveyformdata.grossSalary" number maxlength="6">
+			</div>
+			
+			</td>
+			<td>
+			
+			
+			</td>
+			
+			</tr>
+			<tr style="background-color: #62D2A2;color:white;font-size: 20px;">
+				<td colspan="4">5. Other Facilities</td>
+			</tr>
+			<tr>
+			<td>
+			<label>Non Practice Allowance</label><br>
+			<div class="form-check-inline">
+				<label class="form-check-label">
+					<input type="radio" class="form-check-input" name="np_allowance" ng-model="surveyformdata.nonPracticingAllowance" value="Yes">Yes
+				</label>
+			</div>
+			<div class="form-check-inline">
+				<label class="form-check-label">
+					<input type="radio" class="form-check-input" name="np_allowance" ng-model="surveyformdata.nonPracticingAllowance" value="No">No
+				</label>
+			</div>
+			
+			
+			</td>
+			<td>
+			
+			</td>
+			<td>
+			
+			</td>
+			<td>
+			
+			</td>
+			
+			</tr>
+			<tr style="background-color: #62D2A2;color:white;font-size: 20px;">
+				<td colspan="4"><button class="btn btn-primary float-right" type="button" style="background-color: white; color: black;" ng-click="savesurveyform()">Save Data</button></td>
+			</tr>
+			
+			</table>
+        </div>
+		<div class="col-md-2"></div>
+      </div>
+    </div>
+	</form>
+  </section>
+
+  <!-- end about section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_contact">
+            <h4>
+              Reach at..
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +01 1234567890
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  demo@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="footer_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 footer_col">
+          <div class="footer_detail">
+            <h4>
+              About
+            </h4>
+            <p>
+              Beatae provident nobis mollitia magnam voluptatum, unde dicta facilis minima veniam corporis laudantium alias tenetur eveniet illum reprehenderit fugit a delectus officiis blanditiis ea.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto footer_col">
+          <div class="footer_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="footer_links">
+              <a class="" href="index.html">
+                Home
+              </a>
+              <a class="active" href="about.html">
+                About
+              </a>
+              <a class="" href="departments.html">
+                Departments
+              </a>
+              <a class="" href="doctors.html">
+                Doctors
+              </a>
+              <a class="" href="contact.html">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 footer_col ">
+          <h4>
+            Newsletter
+          </h4>
+          <form action="#">
+            <input type="email" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-info">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved By
+          <a href="https://html.design/">Ministry of Ayush<br><br></a>
+            &copy; <span id="displayYear"></span>Provisional Survey conducted by 
+            <a href="https://ayush.gov.in/">Ministry of Ayush</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"> -->
+  <!-- </script> -->
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="../js/bootstrap.js"></script>
+  <script type="text/javascript" src="../js/angular_1.8.2.js"></script>
+  <script type="text/javascript" src="../js/popper.min.js"></script>
+  
+  <!-- owl slider -->
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"> -->
+  <!-- </script> -->
+  <!-- custom js -->
+  <script type="text/javascript" src="../js/custom.js"></script>
+  <!-- Google Map -->
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"> -->
+  <!-- </script> -->
+  <!-- End Google Map -->
+  
+  <script type="text/javascript" src="../directive/number_directive.js"></script>
+  <script type="text/javascript" src="../controller/surveyformapp.js"></script>
+  <script type="text/javascript" src="../controller/surveyformcontroller.js"></script>
+  
+  
+</body>
+
+</html>
